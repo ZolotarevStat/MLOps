@@ -21,3 +21,6 @@ git clone https://github.com/ZolotarevStat/MLOps.git
 ```bash
 pip install -r requirements.txt
 ```
+
+3. Запустите `api.py`
+4. Курлите
