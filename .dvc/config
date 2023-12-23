@@ -1,4 +1,0 @@
-[core]
-    remote = hatefuls3
-['remote "hatefuls3"']
-    url = s3://zol-hw-mlops
