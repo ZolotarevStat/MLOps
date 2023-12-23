@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  minio:
+    image: minio/minio
+    container_name: minio_s3
+    command: server /data --console-address :9001
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./minio/data:/data
+    environment:
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+#    env_file:
+#      - ./.env
+

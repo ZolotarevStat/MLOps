@@ -21,3 +21,12 @@ git clone https://github.com/ZolotarevStat/MLOps.git
 ```bash
 pip install -r requirements.txt
 ```
+
+## HW2
+
+1) Качаем в терминале необходимые штуки
+- ```brew install minio/stable/minio```
+- ```brew install minio/stable/mc```
+- ```brew install dvc```
+
+2) Запускаем ```sh init.sh```

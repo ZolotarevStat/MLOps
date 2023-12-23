@@ -1,0 +1,6 @@
+.DS_Store
+.minio.sys/
+.dvc/
+minio/
+catboost_info/
+__pycache__
