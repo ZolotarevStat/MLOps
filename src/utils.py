@@ -1,7 +1,7 @@
 import pandas as pd
 from dvc.repo import Repo
 
-def push_file_to_dvc(data: dict, data_name: str):
+def add_to_dvc(data: dict, data_name: str):
 
     df = pd.DataFrame(data)
     repo = Repo()

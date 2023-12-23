@@ -13,6 +13,16 @@ services:
     environment:
       MINIO_ACCESS_KEY: minioadmin
       MINIO_SECRET_KEY: minioadmin
-#    env_file:
-#      - ./.env
+
+  api:
+    image: zolotarevstat/mlops:v1.0
+    container_name: api
+    restart: always
+    depends_on:
+      - minio
+    ports:
+      - "8877:7755"
+    volumes:
+      - ./src:/app/src
+      - ./init.sh:/app/init.sh
 

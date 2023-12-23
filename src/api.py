@@ -1,38 +1,29 @@
 import uvicorn
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic_models import GetDataRequest, AddRequest, TrainRequest, PredictRequest, MetricsRequest, DropRequest
 
 from models import Model
 
 app = FastAPI()
 models = Model()
 
+@app.post('/get_data')
+def get_data(request: GetDataRequest):
+    """
+    Запрос, по которому обучаем модель
+    Пример: curl -X POST -H "Content-Type: application/json" -d '{"path":"https://raw.githubusercontent.com/ZolotarevStat/University/main/%5BFTIAD%5D%20MLOps/heart.csv",
+                                                                  "random_seed": 42,
+                                                                  "for_train_only": 0}' http://0.0.0.0:2023/get_data
+    Ответ: {"message":"Добавили logreg_model"}
+    """
+    path = request.path
+    random_seed = request.random_seed
+    for_train_only = request.for_train_only
 
-class AddRequest(BaseModel):
-    model_type: str
-    model_name: str
-    model_args: dict
+    models.get_data(path, random_seed, for_train_only)
 
-
-class TrainRequest(BaseModel):
-    model_type: str
-    model_name: str
-
-
-class PredictRequest(BaseModel):
-    model_type: str
-    model_name: str
-    data: dict
-
-
-class MetricsRequest(BaseModel):
-    model_type: str
-    model_name: str
-
-
-class DropRequest(BaseModel):
-    model_type: str
-    model_name: str
+    return {"message": "Добавили данные",
+            "path": path}
 
 
 @app.post('/add_model')
