@@ -29,4 +29,5 @@ pip install -r requirements.txt
 - ```brew install minio/stable/mc```
 - ```brew install dvc```
 
-2) Запускаем ```sh init.sh```
+2) Запускаем ```sh init.sh``` или ```docker-compose build``` -> ```docker-compose up```
+3) Тестим работу сервиса, используя курлы по документации функций из ```api.py```
