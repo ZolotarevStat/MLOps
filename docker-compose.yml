@@ -15,14 +15,11 @@ services:
       MINIO_SECRET_KEY: minioadmin
 
   api:
-    image: zolotarevstat/mlops:v1.0
+    image: zolstat/mlops-container-zol:v0.1
     container_name: api
     restart: always
     depends_on:
       - minio
     ports:
       - "8877:7755"
-    volumes:
-      - ./src:/app/src
-      - ./init.sh:/app/init.sh
 

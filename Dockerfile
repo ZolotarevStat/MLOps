@@ -9,7 +9,7 @@ RUN wget https://dl.min.io/server/minio/release/linux-amd64/minio && \
     mv mc /usr/local/bin/
 
 # Setting workdir inside container
-WORKDIR /app
+WORKDIR .
 
 # Setting dependencies
 COPY requirements.txt .
@@ -19,5 +19,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY src/ .
 COPY init.sh .
 
-# RUN init.sh
-CMD ["sh", "init.sh"] && python api.py
+# Running init.sh
+CMD ["sh", "init.sh"] && \
+    python api.py

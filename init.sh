@@ -1,5 +1,5 @@
 echo 'Starting Minio server...'
-minio server minio/
+minio server minio/ &
 mc alias set hatefuls3 http://127.0.0.1:9000 nVobiQ2pBendB0nGOoxi tn7duToNNSKZuarizESJZWcaLwnsxf75K8Wp8J9Z
 
 echo 'Creating bucket...'
@@ -14,4 +14,4 @@ dvc remote modify hatefuls3 access_key_id nVobiQ2pBendB0nGOoxi
 dvc remote modify hatefuls3 secret_access_key tn7duToNNSKZuarizESJZWcaLwnsxf75K8Wp8J9Z
 
 echo "Running api..."
-python src/api.py
+python src/api.py &
