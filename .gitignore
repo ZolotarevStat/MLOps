@@ -4,4 +4,5 @@
 .idea/
 minio/
 catboost_info/
+builds/
 __pycache__
