@@ -1,9 +1,11 @@
+import sys
+sys.path.insert(0, '../src')
+
 from fastapi.testclient import TestClient
-from fastapi import FastAPI
+from src.api import app
 from unittest.mock import patch
 import pytest
 
-app = FastAPI()
 client = TestClient(app)
 
 def test_add_model_success():
