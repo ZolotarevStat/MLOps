@@ -14,7 +14,8 @@ def get_data(request: GetDataRequest):
     Пример: curl -X POST -H "Content-Type: application/json" -d '{"path":"https://raw.githubusercontent.com/ZolotarevStat/University/main/%5BFTIAD%5D%20MLOps/heart.csv",
                                                                   "random_seed": 42,
                                                                   "for_train_only": 0}' http://0.0.0.0:2023/get_data
-    Ответ: {"message":"Добавили logreg_model"}
+    Ответ: {"message":"Добавили данные",
+            "path": "'https://raw.githubusercontent.com/ZolotarevStat/University/main/%5BFTIAD%5D%20MLOps/heart.csv'"}
     """
     path = request.path
     random_seed = request.random_seed
