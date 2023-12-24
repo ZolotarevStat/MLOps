@@ -15,10 +15,7 @@ def s3():
     Yields a fake boto3 s3 client
     """
     with mock_s3():
-        s3_client = boto3.client('s3',
-                                 endpoint_url='http://127.0.0.1:9000',
-                                 aws_access_key_id='nVobiQ2pBendB0nGOoxi',
-                                 aws_secret_access_key='tn7duToNNSKZuarizESJZWcaLwnsxf75K8Wp8J9Z')
+        s3_client = boto3.client('s3')
         s3_client.create_bucket(Bucket="test")
         yield s3_client
 
