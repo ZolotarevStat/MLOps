@@ -22,10 +22,10 @@ def s3():
 
 def test_create_and_get(s3):
     # Recipe(name="nachos", instructions="Melt cheese on chips").save()
-    s3.s3_client.put_object(Body='testing_minio', Bucket='test', Key="test.txt")
+    s3_client.put_object(Body='testing_minio', Bucket='test', Key="test.txt")
     # recipe = Recipe.get_by_name("nachos")
     # assert recipe.name == "nachos"
     # assert recipe.instructions == "Melt cheese on chips"
-    response = s3.s3_client.get_object(Bucket='zol-hw-mlops', Key="modelsDict.pkl")
+    response = s3_client.get_object(Bucket='test', Key="test.txt")
     test_txt = response["Body"].read()
     assert test_txt == 'testing_minio'
