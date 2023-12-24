@@ -30,5 +30,5 @@ def test_create_and_get(s3):
     # assert recipe.name == "nachos"
     # assert recipe.instructions == "Melt cheese on chips"
     response = s3_client.get_object(Bucket='test', Key="test.txt")
-    test_txt = response["Body"].read()
+    test_txt = response["Body"].read().decode("utf-8")
     assert test_txt == 'testing_minio'
