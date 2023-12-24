@@ -19,6 +19,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY src/ .
 COPY init.sh .
 
+# Copying tests into container
+COPY tests/ .
+
 # Running init.sh
-CMD ["sh", "init.sh"] && \
-    python api.py
+CMD ["sh", "init.sh"]

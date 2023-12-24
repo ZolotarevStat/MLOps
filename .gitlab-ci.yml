@@ -3,13 +3,8 @@ stages:
   - build
   - test
 
-#services:
-#  - docker:dind
-
 variables:
-#  DOCKER_HOST: tcp://docker:2375/
-#  DOCKER_TLS_CERTDIR: ""
-  IMAGE_NAME: zolstat/zol-hw3:latest
+  IMAGE_NAME: $DOCKERHUB_USERNAME/zol-hw3:latest
 
 image: docker:latest
 
