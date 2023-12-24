@@ -1,8 +1,9 @@
 from fastapi.testclient import TestClient
+from fastapi import FastAPI
 from unittest.mock import patch
-from src.api import app
 import pytest
 
+app = FastAPI()
 client = TestClient(app)
 
 def test_add_model_success():
