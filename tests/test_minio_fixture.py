@@ -19,8 +19,12 @@ def s3():
     Yields a fake boto3 s3 client
     """
     with mock_s3():
-        s3_client.create_bucket(Bucket="test")
-        yield s3_client
+        try:
+            s3_client.create_bucket(Bucket="test")
+            yield s3_client
+        except: 
+            s3_client.get_bucket(Bucket="test")
+            yield s3_client
 
 
 def test_create_and_get(s3):
