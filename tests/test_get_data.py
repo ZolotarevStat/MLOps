@@ -11,8 +11,8 @@ def test_add_model_success():
         "path": "https://raw.githubusercontent.com/ZolotarevStat/University/main/%5BFTIAD%5D%20MLOps/heart.csv",
         "random_seed": 42,
         "for_train_only": 1
-        }
-    expected_response = {"message":"Добавили данные",
+                   }
+    expected_response = {"message": "Добавили данные",
                          "path": "'https://raw.githubusercontent.com/ZolotarevStat/University/main/%5BFTIAD%5D%20MLOps/heart.csv'"}
     
     with patch('src.models.Model.get_data') as get_data:
