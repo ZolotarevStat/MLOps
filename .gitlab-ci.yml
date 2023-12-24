@@ -26,4 +26,5 @@ test:
   stage: test
   script:
     - docker pull $IMAGE_NAME
+    - echo ls
     - docker run $IMAGE_NAME sh -c "pytest tests/"

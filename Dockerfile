@@ -20,7 +20,7 @@ COPY src/ .
 COPY init.sh .
 
 # Copying tests into container
-COPY tests/ .
+COPY tests/ tests/
 
 # Running init.sh
 CMD ["sh", "init.sh"]
