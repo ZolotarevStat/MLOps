@@ -31,3 +31,8 @@ pip install -r requirements.txt
 
 2) Запускаем ```sh init.sh``` или ```docker-compose build``` -> ```docker-compose up```
 3) Тестим работу сервиса, используя курлы по документации функций из ```api.py```
+
+## HW3
+
+1. Добавил unit тесты в папке ```tests/``` с фикстурой
+2. 
