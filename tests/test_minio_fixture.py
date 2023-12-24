@@ -6,7 +6,10 @@ import pytest
 
 # from recipe import Recipe, S3_BUCKET
 
-s3_client = boto3.client('s3')
+s3_client = boto3.client('s3',
+                         endpoint_url='http://127.0.0.1:9000',
+                         aws_access_key_id='nVobiQ2pBendB0nGOoxi',
+                         aws_secret_access_key='tn7duToNNSKZuarizESJZWcaLwnsxf75K8Wp8J9Z')
 
 @pytest.fixture
 def s3():
