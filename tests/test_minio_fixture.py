@@ -6,6 +6,7 @@ import pytest
 
 # from recipe import Recipe, S3_BUCKET
 
+s3_client = boto3.client('s3')
 
 @pytest.fixture
 def s3():
@@ -15,7 +16,6 @@ def s3():
     Yields a fake boto3 s3 client
     """
     with mock_s3():
-        s3_client = boto3.client('s3')
         s3_client.create_bucket(Bucket="test")
         yield s3_client
 
