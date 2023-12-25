@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 client = TestClient(app)
 
-def test_add_model_success():
+def test_get_data_ok():
     request_dict = {
         "path": "https://raw.githubusercontent.com/ZolotarevStat/University/main/%5BFTIAD%5D%20MLOps/heart.csv",
         "random_seed": 42,
