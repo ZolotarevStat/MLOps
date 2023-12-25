@@ -4,12 +4,10 @@ sys.path.insert(0, '../src')
 from fastapi.testclient import TestClient
 from api import app
 from unittest.mock import patch
-import pytest
 
 client = TestClient(app)
 
 def test_add_model_success():
-    # Arrange
     request_dict = {
         "path": "https://raw.githubusercontent.com/ZolotarevStat/University/main/%5BFTIAD%5D%20MLOps/heart.csv",
         "random_seed": 42,
