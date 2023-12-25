@@ -2,7 +2,7 @@ import sys
 sys.path.insert(0, '../src')
 
 from fastapi.testclient import TestClient
-from src.api import app
+from api import app
 from unittest.mock import patch
 import pytest
 
@@ -18,7 +18,7 @@ def test_add_model_success():
     expected_response = {"message": "Добавили данные",
                          "path": "'https://raw.githubusercontent.com/ZolotarevStat/University/main/%5BFTIAD%5D%20MLOps/heart.csv'"}
     
-    with patch('src.models.Model.get_data') as get_data:
+    with patch('models.Model.get_data') as get_data:
         response = client.post("/get_data", json=request_dict)
         get_data.assert_called_once_with(request_dict['path'], 
                                          request_dict['random_seed'],
