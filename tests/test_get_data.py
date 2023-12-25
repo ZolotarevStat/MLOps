@@ -16,7 +16,7 @@ def test_add_model_success():
         "for_train_only": 1
                    }
     expected_response = {"message": "Добавили данные",
-                         "path": "'https://raw.githubusercontent.com/ZolotarevStat/University/main/%5BFTIAD%5D%20MLOps/heart.csv'"}
+                         "path": 'https://raw.githubusercontent.com/ZolotarevStat/University/main/%5BFTIAD%5D%20MLOps/heart.csv'}
     
     with patch('models.Model.get_data') as get_data:
         response = client.post("/get_data", json=request_dict)
