@@ -16,7 +16,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copying api into container
-COPY src/ .
+COPY src/ src/
 COPY init.sh .
 
 # Copying tests into container
